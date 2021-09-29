@@ -5,20 +5,32 @@ import Friends from './components/Friends/Friends';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import FriendDetail from './components/FriendDetail/FriendDetail';
+import Culture from './components/Culture/Culture';
+
+
 
 function App () {
   return (
     <div className="App">
       <Router>
+        <Header></Header>
         <Switch>
-          <Route path="/home">
+          <Route exact path="/home">
             <Home></Home>
           </Route>
-          <Route path="/friends">
+          <Route exact path="/friends">
             <Friends></Friends>
           </Route>
-          <Route path="/about">
+          <Route exact path="/friend/:friendId">
+            <FriendDetail></FriendDetail>
+          </Route>
+          <Route exact path="/about">
             <About></About>
+          </Route>
+          <Route exact path="/about/culture">
+            <Culture></Culture>
           </Route>
           <Route exact path="/">
             <Home></Home>
