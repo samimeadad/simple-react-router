@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import FriendDetail from './components/FriendDetail/FriendDetail';
 import Culture from './components/Culture/Culture';
+import Posts from './components/Posts/Posts';
+import PostDetail from './components/PostDetail/PostDetail';
 
 
 
@@ -35,31 +37,17 @@ function App () {
           <Route exact path="/">
             <Home></Home>
           </Route>
+          <Route exact path="/posts">
+            <Posts></Posts>
+          </Route>
+          <Route exact path="/post/:postId">
+            <PostDetail></PostDetail>
+          </Route>
           <Route>
             <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>
-
-      {/* <BrowserRouter>
-        <Switch>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/Friends">
-            <Friends></Friends>
-          </Route>
-          <Route path="/about">
-            <About></About>
-          </Route>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route>
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </BrowserRouter> */}
     </div>
   );
 }
